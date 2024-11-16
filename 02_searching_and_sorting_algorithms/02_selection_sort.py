@@ -14,10 +14,13 @@ def selection_sort(sequence):
     # Starting from the first element in the sequence
     for i in range(len(sequence)):
         current_min_idx = i
+
         # Looping over the elements right of the first
         for j in range(i + 1, len(sequence)):
+
             # Check if the current element in the inner loop is smaller than the outer loop's current element
             if sequence[j] < sequence[current_min_idx]:
+
                 # And set the index of the minimum to the current inner
                 current_min_idx = j
 
