@@ -1,4 +1,4 @@
-# Example graph with 6 nodes
+# Example graph with 7 nodes
 
 # Matrix - Each cell keeps whether and how nodes are connected.
 # Can be represented with True or False as well, instead 0 and 1.
