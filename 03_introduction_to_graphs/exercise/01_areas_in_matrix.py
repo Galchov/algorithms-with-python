@@ -31,6 +31,7 @@ for _ in range(rows):
     visited.append([False] * cols)
 
 areas = {}
+total_areas = 0
 
 for row in range(rows):
     for col in range(cols):
@@ -42,11 +43,8 @@ for row in range(rows):
             areas[symbol] = 1
         else:
             areas[symbol] += 1
+        total_areas += 1
 
-
-total_areas = 0
-for value in areas.values():
-    total_areas += value
 
 print(f"Areas: {total_areas}")
 for key, value in sorted(areas.items()):
