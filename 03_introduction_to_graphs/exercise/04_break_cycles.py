@@ -30,6 +30,7 @@ def dfs(node, destination, graph, visited):
     for child in graph[node]:
         dfs(child, destination, graph, visited)
 
+
 def path_exists(source, destination, graph):
     visited = set()
 
