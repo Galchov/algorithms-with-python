@@ -18,7 +18,7 @@ def dfs(node, graph, visited):
 nodes = int(input())
 edges = int(input())
 
-graph = {node: [] for node in range(nodes + 1)}
+graph = {node: [] for node in range(1, nodes + 1)}
 
 for _ in range(edges):
     source, destination = [int(x) for x in input().split()]
@@ -30,5 +30,5 @@ visited = set()
 
 dfs(start_node, graph, visited)
 
-unreachable_nodes = [node for node in graph if node not in visited and node > 0]
+unreachable_nodes = [node for node in graph if node not in visited]
 print(*unreachable_nodes, sep=' ')
