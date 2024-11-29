@@ -11,7 +11,7 @@ class Edge:
 
 
 def find_root(parent, node):
-    # Find parent of node by index in the parent list
+    # Find parent of node by index in the parent list, until reaching the tree's root
     while node != parent[node]:
         node = parent[node]
     return node
