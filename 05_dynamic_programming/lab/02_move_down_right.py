@@ -1,3 +1,30 @@
+from collections import deque
+
+
+def find_path(dp_matrix):
+    result = deque()
+    row = len(dp_matrix) - 1
+    col = len(dp_matrix[0]) - 1
+
+    while row > 0 and col > 0:
+        result.appendleft([row, col])
+        upper_item = dp_matrix[row - 1][col]
+        left_item = dp_matrix[row][col - 1]
+        if upper_item > left_item:
+            row -= 1
+        else:
+            col -= 1
+
+    for i in range(row, 0, -1):
+        result.appendleft([i, col])
+
+    for i in range(col, 0, -1):
+        result.appendleft([row, i])
+
+    result.appendleft([0, 0])
+    return result
+
+
 rows = int(input())
 cols = int(input())
 
@@ -28,4 +55,6 @@ for row in range(1, rows):
         else:
             dp_matrix[row][col] = current + left
 
-# TODO: Track the path backwards from the end (bottom right) to the start (top left), and print its indices
+
+path = find_path(dp_matrix)
+print(*path)
